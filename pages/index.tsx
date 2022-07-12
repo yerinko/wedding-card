@@ -20,7 +20,7 @@ const Index = () => {
         <meta property="og:description" content="9월 24일에 결혼합니다." />
         <meta
           property="og:image"
-          content="https://drive.google.com/uc?id=1kf4TQN50LQyEybKT844g6CLq7nXeG6cl"
+          content="https://drive.google.com/file/d/1-Bex2sc6rBvT5DxzkKnvFKRf3s5wMwHW/view?usp=sharing"
         />
       </Head>
       <Home />
