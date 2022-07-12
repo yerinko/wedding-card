@@ -20,7 +20,7 @@ import coverPic from "@/public/photos/cover_min.jpg";
 import hoya from "@/public/photos/hoya.png";
 import yerin from "@/public/photos/yerin.png";
 import mapPic from "../../../public/photos/map.png";
-import mapTitle from "../../../public/photos/map_title.png";
+import mapTitle from "@/public/photos/map_title.png";
 import { GetTalkListResponse, Party, Talk } from "@/talk/types";
 import {
   BoxShadowStyle,
