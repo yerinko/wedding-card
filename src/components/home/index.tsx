@@ -41,6 +41,7 @@ import WriteTalk from "./talk/WriteTalk";
 import EditTalk from "./talk/EditTalk";
 import QuickPinchZoom, { make3dTransformValue } from "react-quick-pinch-zoom";
 import { UpdateAction } from "react-quick-pinch-zoom/esm/PinchZoom/types";
+import axios from "axios";
 
 const Header = styled.h1`
   display: inline-block;
@@ -539,11 +540,18 @@ const ThankYou = styled.div`
 
 const Home = () => {
   const [writeDone, setWriteDone] = useSessionStorage("talk.writedone");
+  const fetcher = (url: string) => {
+    return axios
+      .get(url, {
+        withCredentials: true,
+      })
+      .then((response) => response.data);
+  };
   const {
     data: talkListResp,
     error,
     mutate,
-  } = useSWR<GetTalkListResponse>("/api/talk/list");
+  } = useSWR<GetTalkListResponse>("/api/talk/list", fetcher);
 
   const [showGalleryModal, setShowGalleryModal] = useState(false);
   const [showWriteTalkModal, setShowWriteTalkModal] = useState(false);

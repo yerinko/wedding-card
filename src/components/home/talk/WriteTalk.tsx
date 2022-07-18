@@ -90,6 +90,7 @@ const WriteTalk = ({ onWrite }: Props) => {
     setStoredAuthor(e.currentTarget.textContent || "");
   };
 
+  console.log("author", watch("author"));
   const handleMsgInput: FormEventHandler<HTMLDivElement> = (e) => {
     setValue("msg", e.currentTarget.textContent || "", {
       shouldValidate: true,
@@ -104,7 +105,6 @@ const WriteTalk = ({ onWrite }: Props) => {
     }
     try {
       setLoading(true);
-
       const resp = await fetch("/api/talk", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -194,18 +194,7 @@ const WriteTalk = ({ onWrite }: Props) => {
         {step3 && (
           <PasswordWrap>
             <label htmlFor="password">작성하신 글의 암호를 입력해주세요.</label>
-            <PasswordInput
-              {...register("password", {
-                required: true,
-                minLength: {
-                  value: 4,
-                  message: "암호가 너무 짧아요 (4자 이상)",
-                },
-              })}
-              ref={passwordInputRef}
-              id="password"
-              type="password"
-            />
+            <PasswordInput {...register("password")} type={"password"} />
           </PasswordWrap>
         )}
         {(step2 || step3) && (
