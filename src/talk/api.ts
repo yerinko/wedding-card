@@ -100,7 +100,7 @@ export const postTalk = async (reqData: PostTalkRequest) => {
     id: created.toString(),
     created: created,
     password: await hashPasword(reqData.password),
-    published: false,
+    published: true,
   };
 
   const sheet = await getSheet();
@@ -130,7 +130,7 @@ export const patchTalk = async (reqData: PatchTalkRequest) => {
   row.color = reqData.color;
   row.party = reqData.party;
   row.msg = reqData.msg;
-  row.published = false;
+  row.published = true;
   await row.save();
 
   const respData: PatchTalkResponse = {};

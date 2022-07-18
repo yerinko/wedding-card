@@ -90,7 +90,6 @@ const WriteTalk = ({ onWrite }: Props) => {
     setStoredAuthor(e.currentTarget.textContent || "");
   };
 
-  console.log("author", watch("author"));
   const handleMsgInput: FormEventHandler<HTMLDivElement> = (e) => {
     setValue("msg", e.currentTarget.textContent || "", {
       shouldValidate: true,
