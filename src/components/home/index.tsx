@@ -1,4 +1,11 @@
-import { Copy, EmojiLookLeft, EmojiLookRight, PinAlt } from "iconoir-react";
+import {
+  Copy,
+  EmojiLookLeft,
+  EmojiLookRight,
+  PinAlt,
+  Phone,
+  Heart,
+} from "iconoir-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, {
@@ -146,7 +153,7 @@ const CallButtonWrap = styled.div<{ bgColor: string }>`
     width: 60px;
     height: 60px;
     color: white;
-    padding: 15px;
+    padding: 20px;
     border-radius: 30px;
     background-color: ${({ bgColor }) => bgColor};
   }
@@ -307,6 +314,12 @@ const GiveWrap = styled.div`
   display: inline-block;
   text-align: left;
   line-height: 2;
+  p {
+    strong {
+      font-weight: bold;
+      font-size: 15px;
+    }
+  }
 `;
 
 const CopyTextButton = styled.button`
@@ -501,7 +514,7 @@ const TalkBubble = ({
   );
   return (
     <TalkBubbleWrap party={talk.party} color={talk.color} selected={selected}>
-      {talk.party === "BRIDE" ? <EmojiLookLeft /> : <EmojiLookRight />}
+      {talk.party === "BRIDE" ? <Heart /> : <Heart />}
       <div onClick={handleBubbleOutsideClick}>
         {selected && talk.party === "BRIDE" && <>{editBtn} </>}
         {talk.author}
@@ -605,7 +618,7 @@ const Home = () => {
       <p>
         2022년 9월 24일 토요일 오후 12시30분
         <br />
-        에덴 파라다이스 호텔 에덴 가든
+        🌳 에덴 파라다이스 호텔 에덴 가든 🍃
       </p>
       <Link href="/live" passHref>
         <LiveButton>📹 결혼식 생중계 보러가기</LiveButton>
@@ -644,15 +657,15 @@ const Home = () => {
       <CallWrap>
         <a href="tel:01092772904">
           <CallButton
-            icon={<EmojiLookRight />}
-            bgColor="#abdaab"
+            icon={<Heart />}
+            bgColor="#fbb96b"
             label="신랑측에 연락하기"
           />
         </a>
         <a href="tel:01072646292">
           <CallButton
-            icon={<EmojiLookLeft />}
-            bgColor="#c2e0a3"
+            icon={<Heart />}
+            bgColor="#fbb96b"
             label="신부측에 연락하기"
           />
         </a>
@@ -696,6 +709,22 @@ const Home = () => {
         <PinAlt color="#fff" /> 네이버지도
       </NaverMapButton>
       <SectionHr />
+      <SectionHeader>전세 버스 안내 🚌</SectionHeader>
+      <GiveWrap>
+        <p>
+          <strong>예식 당일 오전 10시</strong>
+          <br />
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          <p>서울 강동구 성내동 '천호역 5번 출구' 앞</p>
+        </p>
+      </GiveWrap>
+      <SectionHr />
+      <p>
+        결혼식장의 아름다운 꽃은 축하해주시는 여러분 모두 입니다.
+        <br />
+        🌻 화환 대신 마음만 감사히 받겠습니다. 💐
+      </p>
+      <SectionHr />
       <SectionHeader>💸 마음 전하실 곳</SectionHeader>
       <GiveWrap>
         <p>
@@ -712,8 +741,8 @@ const Home = () => {
       <SectionHr />
       <SectionHeader>축하의 한마디</SectionHeader>
       <WriteSectionSubHeader>
-        <p>신랑측</p>
-        <p>신부측</p>
+        <p>🤵🏻신랑측</p>
+        <p>신부측👰🏻‍♀️</p>
       </WriteSectionSubHeader>
       <div style={{ clear: "both" }} />
       <TalkWrap>
@@ -734,7 +763,7 @@ const Home = () => {
           visible={isWriteButtonShown}
           onClick={handleWriteButtonClick}
         >
-          😍 나도 한마디
+          나도 한마디 💐
         </WriteButton>
       )}
       {showWriteTalkModal && (

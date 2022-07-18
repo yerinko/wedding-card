@@ -137,7 +137,7 @@ const WriteTalk = ({ onWrite }: Props) => {
   return (
     <Wrap>
       <Header>
-        😍 <span>나도 한마디</span>
+        <span>나도 한마디</span> 💐
       </Header>
 
       <form onSubmit={handleSubmit(onSubmit)}>

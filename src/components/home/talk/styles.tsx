@@ -55,8 +55,8 @@ export const HighlightStyle = css`
   background: linear-gradient(
     0deg,
     transparent 33%,
-    rgba(255, 136, 170, 0.3) 36%,
-    rgba(255, 136, 170, 0.3) 66%,
+    #fbb96b 26%,
+    #fbb96b 46%,
     transparent 70%
   );
 `;
@@ -86,13 +86,11 @@ export const PartyLabel = styled.label`
   width: 100%;
   height: 44px;
   border-radius: 8px;
-  border: 1px solid rgb(255, 136, 170);
-  color: rgb(255, 136, 170);
   text-align: center;
   font-size: 16px;
   input[type="radio"]:checked + & {
-    color: white;
-    background: rgb(255, 136, 170);
+    color: black;
+    background: #fbb96b;
   }
 `;
 
@@ -154,12 +152,12 @@ export const PasswordWrap = styled.div`
 export const PasswordInput = styled.input`
   padding: 12px 0;
   border-radius: 8px;
-  border: 1px solid rgb(255, 136, 170);
+  border: 1px solid rgb(251, 185, 107);
   margin-top: 4px;
-  background: rgb(255, 136, 170, 0.1);
+  background: rgb(251, 185, 107, 0.1);
   text-align: center;
   outline: none;
-  color: rgb(255, 136, 170);
+  color: #000;
   &:focus {
     background: white;
   }
@@ -176,12 +174,12 @@ export const SubmitButton = styled.input<{ isValid: boolean }>`
   font-size: 16px;
   font-weight: bold;
   color: white;
-  background: rgb(255, 136, 170);
+  background: #fbb96b;
   outline: none;
   ${({ isValid }) =>
     !isValid &&
     css`
-      background: rgb(255, 136, 170, 0.7);
+      background: #fb9b6b;
     `}
 `;
 
@@ -198,7 +196,7 @@ export const LoadingOverlay = styled.div`
 `;
 
 export const TalkHeadColors = [
-  "#ECC8F7",
+  "#FBB96B",
   "#F7C8D3",
   "#e5d3b3",
   "#fed0b0",
