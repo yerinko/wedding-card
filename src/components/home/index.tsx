@@ -16,7 +16,7 @@ import useSWR from "swr";
 import Modal from "@/components/common/Modal";
 import timeDiffFormat from "@/common/utils/timeDiffFormat";
 import { useSessionStorage } from "@/common/hooks/useStorage";
-import coverPic from "@/public/photos/cover_min.jpg";
+import coverPic from "@/public/photos/main.png";
 import hoya from "@/public/photos/hoya.png";
 import yerin from "@/public/photos/yerin.png";
 import mapPic from "../../../public/photos/map.png";
@@ -53,11 +53,48 @@ const Header = styled.h1`
   }
 `;
 
+const TopTitle = styled.h1`
+  display: inline-block;
+  margin: 60px 0;
+  font-size: 32px;
+  font-weight: 500;
+  font-family: "Rubik Mono One", sans-serif;
+  line-height: 1.15;
+  text-align: center;
+  color: #e61587;
+  width: 50%;
+  float: left;
+  hr {
+    width: 70%;
+    margin: 0 auto;
+    border: 0;
+  }
+`;
+
+const StarAction = styled.div`
+  width: 25%;
+  float: left;
+  margin: 80px 0 0 0;
+  font-size: 52px;
+  font-weight: 500;
+  font-family: "Raleway", sans-serif;
+  line-height: 1.15;
+  text-align: cetner;
+  color: #e61587;
+  animation: rotate_image 1.5s linear infinite;
+  transform-origin: 50% 20%;
+  @keyframes rotate_image {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
 const CoverPicWrap = styled.div`
   width: 90%;
   margin: 0 auto;
   margin-bottom: 40px;
-  border-radius: 30px;
+  border-radius: 50%;
   overflow: hidden;
   line-height: 0;
 `;
@@ -550,12 +587,18 @@ const Home = () => {
 
   return (
     <Main>
-      {/*<Header>*/}
-      {/*이창호*/}
-      {/*<hr />*/}
-      {/*고예린*/}
-      {/*</Header>*/}
+      <StarAction className="star">*</StarAction>
+
+      <TopTitle>
+        {/* eslint-disable-next-line react/no-unescaped-entities */}
+        WE'RE
+        <hr />
+        GETTING
+        <hr />
+        MARRIED
+      </TopTitle>
       <Header />
+      <StarAction className="star">*</StarAction>
       <CoverPicWrap>
         <Image src={coverPic} priority={true} placeholder="blur" alt="" />
       </CoverPicWrap>
