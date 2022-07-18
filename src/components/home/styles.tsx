@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { Party } from "@/talk/types";
 
 export const TextSerifStyle = css`
-  font-family: "Noto Serif KR", serif;
+  font-family: "Gowun Dodum", serif;
 `;
 export const TextSansStyle = css`
   font-family: sans-serif;

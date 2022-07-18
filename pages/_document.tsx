@@ -46,7 +46,7 @@ export default class MyDocument extends Document {
           />
           <link
             rel="preload"
-            href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Gowun+Dodum+KR:wght@400;500&display=swap"
             as="style"
           />
           <style
@@ -54,7 +54,7 @@ export default class MyDocument extends Document {
               __html: `</style>
                         <link
                           rel="stylesheet"
-                          href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500&display=swap"
+                         href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
                           media="print"
                           onload="this.media='all';"
                         />
