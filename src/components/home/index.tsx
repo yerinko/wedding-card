@@ -540,13 +540,8 @@ const ThankYou = styled.div`
 
 const Home = () => {
   const [writeDone, setWriteDone] = useSessionStorage("talk.writedone");
-  const fetcher = (url: string) => {
-    return axios
-      .get(url, {
-        withCredentials: true,
-      })
-      .then((response) => response.data);
-  };
+  const fetcher = (url: string) => fetch(url).then((r) => r.json());
+
   const {
     data: talkListResp,
     error,

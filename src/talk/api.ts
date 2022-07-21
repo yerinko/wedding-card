@@ -79,7 +79,7 @@ const hashPasword = async (password: string) =>
 
 export const COOKIE_TALK_ID = "talkId";
 
-export const getTalkList = async (talkId: string) => {
+export const getTalkList = async (talkId?: string) => {
   const sheet = await getSheet();
 
   const rows = await sheet.getRows();
