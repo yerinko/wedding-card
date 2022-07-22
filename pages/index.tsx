@@ -22,6 +22,8 @@ const Index = () => {
           property="og:image"
           content="http://drive.google.com/uc?export=view&id=1anEs_hzWw-0pWD9_xwvTHfM7kW_2__d4"
         />
+        <meta property="og:image:width" content="800" />
+        <meta property="og:image:height" content="400" />
       </Head>
       <Home />
     </>
