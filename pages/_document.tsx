@@ -64,6 +64,12 @@ export default class MyDocument extends Document {
                          media="print"
                          onload="this.media='all';"
                          />
+                         <link
+                         href="https://fonts.googleapis.com/css2?family=Hahmlet&display=swap" 
+                         rel="stylesheet"
+                         media="print"
+                         onload="this.media='all';"
+                         />
                         <style>`,
             }}
           ></style>

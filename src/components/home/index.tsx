@@ -24,6 +24,7 @@ import Modal from "@/components/common/Modal";
 import timeDiffFormat from "@/common/utils/timeDiffFormat";
 import { useSessionStorage } from "@/common/hooks/useStorage";
 import coverPic from "@/public/photos/main.png";
+import developPic from "@/public/photos/developer.png";
 import hoya from "@/public/photos/hoya.png";
 import yerin from "@/public/photos/yerin.png";
 import mapPic from "../../../public/photos/map.png";
@@ -103,6 +104,14 @@ const CoverPicWrap = styled.div`
   margin: 0 auto;
   margin-bottom: 40px;
   border-radius: 50%;
+  overflow: hidden;
+  line-height: 0;
+`;
+
+const DevelopImg = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 40px;
   overflow: hidden;
   line-height: 0;
 `;
@@ -601,10 +610,10 @@ const Home = () => {
   };
   const handleEditTalkModalClose = () => setShowEditTalkModal(undefined);
 
+  // @ts-ignore
   return (
     <Main>
       <StarAction className="star">*</StarAction>
-
       <TopTitle>
         {/* eslint-disable-next-line react/no-unescaped-entities */}
         WE'RE
@@ -613,19 +622,20 @@ const Home = () => {
         <hr />
         MARRIED
       </TopTitle>
-      <Header />
       <StarAction className="star">*</StarAction>
       <CoverPicWrap>
         <Image src={coverPic} priority={true} placeholder="blur" alt="" />
       </CoverPicWrap>
+      <DevelopImg>
+        <Image src={developPic} priority={true} placeholder="blur" alt="" />
+      </DevelopImg>
+      <SectionHr />
       <p>
         2022년 9월 24일 토요일 오후 12시30분
         <br />
         🌳 에덴 파라다이스 호텔 에덴 가든 🍃
       </p>
-      <Link href="/live" passHref>
-        <LiveButton>📹 결혼식 생중계 보러가기</LiveButton>
-      </Link>
+
       <SectionHr />
       <Header>
         <Image
@@ -675,7 +685,7 @@ const Home = () => {
       </CallWrap>
       <SectionHr />
       <PhotoGrid>
-        {Array.from(Array(14), (_, i) => i).map((i) => (
+        {Array.from(Array(20), (_, i) => i).map((i) => (
           <li key={i}>
             <img
               role="button"
@@ -723,9 +733,9 @@ const Home = () => {
       </GiveWrap>
       <SectionHr />
       <p>
-        결혼식장의 아름다운 꽃은 축하해주시는 여러분 모두 입니다.
-        <br />
         🌻 화환 대신 마음만 감사히 받겠습니다. 💐
+        <br />
+        결혼식장의 아름다운 꽃은 축하해주시는 여러분 모두 입니다.
       </p>
       <SectionHr />
       <SectionHeader>💸 마음 전하실 곳</SectionHeader>
