@@ -630,11 +630,13 @@ const Home = () => {
         <Image src={developPic} priority={true} placeholder="blur" alt="" />
       </DevelopImg>
       <SectionHr />
-      <p>
-        2022년 9월 24일 토요일 오후 12시30분
-        <br />
-        🌳 에덴 파라다이스 호텔 에덴 가든 🍃
-      </p>
+      <Header>
+        <p>
+          2022년 9월 24일 토요일 오후 12시30분
+          <br />
+          🌳 에덴 파라다이스 호텔 에덴 가든 🍃
+        </p>
+      </Header>
 
       <SectionHr />
       <Header>
