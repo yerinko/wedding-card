@@ -549,7 +549,6 @@ const ThankYou = styled.div`
 `;
 
 const Home = () => {
-  const [writeDone, setWriteDone] = useSessionStorage("talk.writedone");
   const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
   const {
@@ -602,7 +601,6 @@ const Home = () => {
   const handleWriteButtonClick = () => setShowWriteTalkModal(true);
   onMoveElement();
   const handleWriteTalk = (_: string) => {
-    setWriteDone("done");
     setShowWriteTalkModal(false);
     mutate();
   };
@@ -615,7 +613,6 @@ const Home = () => {
     setSelectedTalkId(undefined);
   };
   const handleEditTalk = (_: string) => {
-    setWriteDone("done");
     setShowEditTalkModal(undefined);
     mutate();
   };
@@ -790,15 +787,12 @@ const Home = () => {
           />
         ))}
       </TalkWrap>
-      <ThankYou>{writeDone ? "감사합니다." : ""}</ThankYou>
-      {!writeDone && (
-        <WriteButton
-          visible={isWriteButtonShown}
-          onClick={handleWriteButtonClick}
-        >
-          나도 한마디 💐
-        </WriteButton>
-      )}
+      <WriteButton
+        visible={isWriteButtonShown}
+        onClick={handleWriteButtonClick}
+      >
+        나도 한마디 💐
+      </WriteButton>
       {showWriteTalkModal && (
         <Modal handleClose={handleWriteTalkModalClose}>
           <WriteTalk onWrite={handleWriteTalk} />
