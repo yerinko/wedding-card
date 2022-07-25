@@ -1,13 +1,5 @@
-import {
-  Copy,
-  EmojiLookLeft,
-  EmojiLookRight,
-  PinAlt,
-  Phone,
-  Heart,
-} from "iconoir-react";
+import { Copy, PinAlt, Heart } from "iconoir-react";
 import Image from "next/image";
-import Link from "next/link";
 import React, {
   MouseEventHandler,
   useCallback,
@@ -23,7 +15,6 @@ import YouTube from "react-youtube";
 
 import Modal from "@/components/common/Modal";
 import timeDiffFormat from "@/common/utils/timeDiffFormat";
-import { useSessionStorage } from "@/common/hooks/useStorage";
 import coverPic from "@/public/photos/main.png";
 import developPic from "@/public/photos/developer.png";
 import hoya from "@/public/photos/hoya.png";
@@ -43,7 +34,6 @@ import WriteTalk from "./talk/WriteTalk";
 import EditTalk from "./talk/EditTalk";
 import QuickPinchZoom, { make3dTransformValue } from "react-quick-pinch-zoom";
 import { UpdateAction } from "react-quick-pinch-zoom/esm/PinchZoom/types";
-import axios from "axios";
 
 const Header = styled.h1`
   display: inline-block;
@@ -543,19 +533,13 @@ const TalkBubble = ({
   );
 };
 
-const ThankYou = styled.div`
-  padding: 60px;
-  color: #666;
-`;
-
 const Home = () => {
   const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
-  const {
-    data: talkListResp,
-    error,
-    mutate,
-  } = useSWR<GetTalkListResponse>("/api/talk/list", fetcher);
+  const { data: talkListResp, mutate } = useSWR<GetTalkListResponse>(
+    "/api/talk/list",
+    fetcher
+  );
 
   const [showGalleryModal, setShowGalleryModal] = useState(false);
   const [showWriteTalkModal, setShowWriteTalkModal] = useState(false);
