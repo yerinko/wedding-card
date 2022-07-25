@@ -737,7 +737,7 @@ const Home = () => {
       <SectionHr />
       <GiveWrap ref={scrollElement}>
         <YouTube
-          videoId={"zk7iEF6tg_I"}
+          videoId={"z2L30TDwDPI"}
           opts={{
             width: "100%",
             height: "100%",
