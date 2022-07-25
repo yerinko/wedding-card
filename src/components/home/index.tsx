@@ -19,6 +19,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import styled, { css } from "styled-components";
 import useSWR from "swr";
+import YouTube from "react-youtube";
 
 import Modal from "@/components/common/Modal";
 import timeDiffFormat from "@/common/utils/timeDiffFormat";
@@ -730,28 +731,34 @@ const Home = () => {
           <strong>예식 당일 오전 10시</strong>
           <br />
           {/* eslint-disable-next-line react/no-unescaped-entities */}
-          <p>서울 강동구 성내동 '천호역 5번 출구' 앞</p>
+          <p>서울 강동구 '천호역 5번 출구' 앞</p>
         </p>
       </GiveWrap>
       <SectionHr />
       <p>
         🌻 화환 대신 마음만 감사히 받겠습니다. 💐
         <br />
-        결혼식장의 아름다운 꽃은 축하해주시는 여러분 모두 입니다.
+        결혼식장의 아름다운 꽃은
+        <br />
+        축하해주시는 여러분 모두 입니다.
       </p>
       <SectionHr />
-      <SectionHeader>💸 마음 전하실 곳</SectionHeader>
       <GiveWrap>
-        <p>
-          <strong>신랑측</strong> (이창호)
-          <br />
-          <CopyText text="모르겠어요! 우하하" />
-        </p>
-        <p>
-          <strong>신부측</strong> (고예린)
-          <br />
-          <CopyText text="하나은행 142-910327-11107" />
-        </p>
+        <YouTube
+          videoId={"zk7iEF6tg_I"}
+          opts={{
+            width: "100%",
+            height: "100%",
+            playerVars: {
+              autoplay: 0,
+              rel: 0,
+              modestbranding: 1,
+            },
+          }}
+          onEnd={(e) => {
+            e.target.stopVideo(0);
+          }}
+        />
       </GiveWrap>
       <SectionHr />
       <SectionHeader>축하의 한마디</SectionHeader>
