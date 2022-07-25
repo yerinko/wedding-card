@@ -585,6 +585,7 @@ const Home = () => {
   const handleWriteButtonClick = () => setShowWriteTalkModal(true);
   onMoveElement();
   const handleWriteTalk = (_: string) => {
+    onMoveElement();
     setShowWriteTalkModal(false);
     mutate();
   };
@@ -735,7 +736,7 @@ const Home = () => {
         축하해주시는 여러분 모두 입니다.
       </p>
       <SectionHr />
-      <GiveWrap ref={scrollElement}>
+      <GiveWrap ref={showWriteTalkModal ? scrollElement : undefined}>
         <YouTube
           videoId={"z2L30TDwDPI"}
           opts={{
