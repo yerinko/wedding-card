@@ -590,7 +590,17 @@ const Home = () => {
   const handleTalkBubbleClick = (id: string | undefined) =>
     setSelectedTalkId(id);
 
+  const scrollElement = useRef<HTMLDivElement>(null);
+
+  const onMoveElement = () => {
+    scrollElement.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   const handleWriteButtonClick = () => setShowWriteTalkModal(true);
+  onMoveElement();
   const handleWriteTalk = (_: string) => {
     setWriteDone("done");
     setShowWriteTalkModal(false);
@@ -611,6 +621,7 @@ const Home = () => {
   };
   const handleEditTalkModalClose = () => setShowEditTalkModal(undefined);
 
+  // @ts-ignore
   // @ts-ignore
   return (
     <Main>
@@ -743,7 +754,7 @@ const Home = () => {
         축하해주시는 여러분 모두 입니다.
       </p>
       <SectionHr />
-      <GiveWrap>
+      <GiveWrap ref={scrollElement}>
         <YouTube
           videoId={"zk7iEF6tg_I"}
           opts={{
