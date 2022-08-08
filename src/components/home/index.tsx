@@ -620,9 +620,6 @@ const Home = () => {
       <CoverPicWrap>
         <Image src={coverPic} priority={true} placeholder="blur" alt="" />
       </CoverPicWrap>
-      <DevelopImg>
-        <Image src={developPic} priority={true} placeholder="blur" alt="" />
-      </DevelopImg>
       <SectionHr />
       <Header>
         <p>
