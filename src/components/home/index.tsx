@@ -721,7 +721,7 @@ const Home = () => {
           <strong>예식 당일 오전 10시</strong>
           <br />
           {/* eslint-disable-next-line react/no-unescaped-entities */}
-          <p>서울 강동구 '천호역 5번 출구' 앞</p>
+          <p>'천호역 1번 출구' 완구 거리 앞</p>
         </p>
       </GiveWrap>
       <SectionHr />
